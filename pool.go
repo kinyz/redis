@@ -108,10 +108,8 @@ func (p *Pool) GetMasterConn() IValue {
 // 获取redis Slave conn
 func (p *Pool) GetSlaveConn() IValue {
 	if !p.conf.Slave.Enable {
-		//	fmt.Println("我是master")
 		return &Value{Conn: p.Master().Get()}
 	}
-	//fmt.Println("我是slave")
 	return &Value{Conn: p.Slave().Get()}
 }
 
@@ -123,18 +121,14 @@ func (p *Pool) GetRawMasterConn() redis.Conn {
 // 获取redis Slave conn
 func (p *Pool) GetRawSlaveConn() redis.Conn {
 	if !p.conf.Slave.Enable {
-		//	fmt.Println("我是master")
 		return p.Master().Get()
 	}
-	//fmt.Println("我是slave")
 	return p.Slave().Get()
 }
 
 func (p *Pool) CloseMaster() error {
-	//	p.GetMasterPool().Close()
 	return p.Master().Close()
 }
 func (p *Pool) CloseSlave() error {
-	//p.GetMasterPool().Close()
 	return p.Slave().Close()
 }
