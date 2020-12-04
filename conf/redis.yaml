@@ -1,8 +1,8 @@
 env: false # 是否开启环境变量
 master:
-  host: 140.143.146.99
+  host:
   port: 30001
-  password: mBNv+o!&jF9u:-k9
+  password:
   maxIdle: 8
   maxActive: 0
   idleTimeout: 100
@@ -10,9 +10,9 @@ master:
 # slave配置
 slave:
   enable: false
-  host: 140.143.146.99
-  port: 30002
-  password: mBNv+o!&jF9u:-k9
+  host:
+  port:
+  password:
   maxIdle: 8
   maxActive: 0
   idleTimeout: 100
